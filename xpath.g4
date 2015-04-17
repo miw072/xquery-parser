@@ -4,20 +4,20 @@
 grammar xpath;
 
 
-ap  	: 'doc' '(' ID ')' '/' rp
-	| 'doc' '(' ID ')' '//' rp 
+ap  : 'doc' '(' ID ')' '/' rp          #apsl
+	| 'doc' '(' ID ')' '//' rp         #apdsl
 	;
 
-rp	: '*'
-	| ID
-	| '.'
-	| '..'
-	| '(' rp ')'
-	| rp '/' rp
-	| rp '//' rp
-	| rp '[' fun ']'
-	| rp ',' rp
-	| 'text()'
+rp	: '*'							    #rpchildren
+	| ID                                #rptag
+	| '.'							    #rpcurr
+	| '..'								#rpparent
+	| '(' rp ')'						#rpin
+	| rp '/' rp							#rpsrp
+	| rp '//' rp						#rpdsrp
+	| rp '[' fun ']'					#rpfilter	
+	| rp ',' rp							#rpandrp	
+	| 'text()'							#rptext
 	;
 
 fun	: rp
@@ -55,7 +55,7 @@ DSLASH: '//';
 LPAREN: '(';
 RPAREN: ')';
 
-ID : [a-zA-Z0-9]+;
+ID : [a-zA-Z0-9._]+;
 
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
