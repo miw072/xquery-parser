@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="target/generated-sources/antlr4"/>
+	<classpathentry excluding="generated-sources/antlr4/" kind="src" path="target"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="antlr-4.4-complete.jar"/>
+	<classpathentry kind="lib" path="/home/fireleg/cse232/resolver.jar"/>
+	<classpathentry kind="lib" path="/home/fireleg/cse232/serializer.jar"/>
+	<classpathentry kind="lib" path="/home/fireleg/cse232/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="/home/fireleg/cse232/xercesSamples.jar"/>
+	<classpathentry kind="lib" path="/home/fireleg/cse232/xml-apis.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

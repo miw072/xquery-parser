@@ -1,0 +1,20 @@
+for $tuple in 
+join
+(for $b in document("book.xml")//book,
+$tb in $b/title
+return <tuple> {<b> {$b} </b>, <tb> {$tb} </tb>} </tuple>,
+
+for $a in document("book.xml")//book,
+$ta in $a/title
+return <tuple> {<a> {$a} </a>, <ta> {$ta} </ta>} </tuple>,
+[tb], [ta]
+)
+
+return
+<bookwithprices>
+{ 
+$tuple,
+<pricereview>{ $tuple/a/* }</pricereview>,
+<price>{ $tuple/b/* }</price>
+}
+</bookwithprices>
