@@ -898,6 +898,8 @@ public ArrayList<Node> visitCondsome(xpathParser.CondsomeContext ctx){
 		xpathParser parser = new xpathParser(tokens);
 		ParseTree tree = parser.xq(); // begin parsing at init rule
 		Myxpathvisitor eval = new Myxpathvisitor();
+		JoinHelper helper = new JoinHelper();
+		helper.visit(tree);
 		ArrayList<Node> rs = eval.visit(tree);
 		
 		Element rootElement = eval.document.createElement("myoutput");
